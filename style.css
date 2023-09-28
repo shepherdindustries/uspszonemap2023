@@ -1,0 +1,151 @@
+#loadingSpinner {
+  display: none;
+}
+
+.container {
+  margin-left: 400px;
+  margin-top: 75px;
+}
+
+#mapContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#zonesLegend {
+  margin-right: 2rem;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.zoneLegendItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.zoneColorBox {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2,
+h3 {
+  font-family: 'Inter', sans-serif;
+}
+
+.mapAndLegend {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+.head-tittle-wrap {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background-color: #eceeef;
+  border-radius: .3rem
+}
+
+#zoneInfoWrap {
+  display: none
+}
+
+.zone-info h2 {
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  font-family: 'Inter', sans-serif;
+}
+
+.zone-info h3 {
+  color: gray;
+  font-family: 'Inter', sans-serif;
+}
+
+.slide {
+  -webkit-animation: slide 1s ease;
+  animation: slide 1s ease
+}
+
+@-webkit-keyframes slide {
+  0% {
+    transform: translateX(-100%)
+  }
+
+  100% {
+    transform: translateX(0)
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%)
+  }
+
+  100% {
+    transform: translateX(0)
+  }
+}
+
+#alert-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: none
+}
+
+.alert {
+  position: relative;
+  background-color: #001571;
+  pointer-events: auto;
+  overflow: hidden;
+  padding: 15px 15px 15px 50px;
+  width: 300px;
+  margin: 0 auto;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  -moz-box-shadow: 0 0 12px #999;
+  -webkit-box-shadow: 0 0 12px #999;
+  box-shadow: 0 0 12px #999;
+  color: #fff;
+  opacity: .8;
+  font-size: 14px
+}
+
+.alert {
+  -moz-box-shadow: 0 0 12px #000;
+  -webkit-box-shadow: 0 0 12px #000;
+  box-shadow: 0 0 12px #000;
+  opacity: 1;
+  cursor: pointer
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: #fff;
+  font-weight: 700;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: .3s
+}

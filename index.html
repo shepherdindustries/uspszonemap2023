@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USPS Zone Map Tool</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrraper">
+    <div class="zone">
+      <div class="container">
+        <div class="row justify-content-center align-items-center position-relative">
+          <div class="col-md-2">
+            <h2>From</h2>
+            <div>
+              <input onkeyup="getValueFrom()" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                maxlength="5" type="tel" pattern="\d{5}" id="fromZip" class="form-control"
+                title="Please enter a 5-digit number">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <h2>To</h2>
+            <div>
+              <input onkeyup="getValueTo()" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                maxlength="5" type="tel" pattern="\d{5}" id="toZip" class="form-control"
+                title="Please enter a 5-digit number">
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div id="zoneInfoWrap">
+              <div id="loadingSpinner" class="spinner-border text-primary" role="status" style="display: none;">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <div class="zone-info slide ps-5">
+                <h2><span id="zone"></span></h2>
+                <h3>
+                  <span id="fromCS"></span><span id="toCS"></span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="alert-wrap">
+      <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.parentElement.style.display='none';">&times;</span>
+        <div id="toast-message"></div>
+      </div>
+    </div>
+  </div>
+  <div class="mapAndLegend">
+    <div id="zonesLegend">
+      <!-- Legend items will be populated dynamically -->
+    </div>
+    <!-- Inside the body tag, but after the ending div of wrraper -->
+    <div id="mapContainer"></div>
+  </div>
+</body>
+
+</html>
